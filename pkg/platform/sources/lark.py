@@ -345,8 +345,9 @@ class LarkAdapter(adapter.MessagePlatformAdapter):
         self.logger = logger
         self.quart_app = quart.Quart(__name__)
         self.listeners = {}
+        self.callback_url = config['callback-url']
 
-        @self.quart_app.route('/lark/callback', methods=['POST'])
+        @self.quart_app.route(self.callback_url, methods=['POST'])
         async def lark_callback():
             try:
                 data = await quart.request.json

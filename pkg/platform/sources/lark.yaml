@@ -55,6 +55,16 @@ spec:
       type: integer
       required: true
       default: 2285
+    - name: callback-url
+      label:
+        en_US: Callback Url
+        zh_Hans: 回调地址
+      description:
+        en_US: Only valid when webhook mode is enabled, please fill in the webhook callback url
+        zh_Hans: 仅在启用 Webhook 模式时有效，请填写回调地址
+      type: string
+      required: true
+      default: "/lark/callback"
     - name: encrypt-key
       label:
         en_US: Encrypt Key
